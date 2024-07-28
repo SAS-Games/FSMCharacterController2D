@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.inkle.ink-unity-integration": "https://github.com/inkle/ink-unity-integration.git#upm",
     "com.sas.dev-utilities": "https://github.com/SAS-Games/SASPackage-DevUtilities.git#v1.0.4",
     "com.sas.scriptabletypes": "https://github.com/SAS-Games/SAS-ScriptableTypes.git#v1.0.0",
     "com.sas.statemachine": "https://github.com/SAS-Games/SASPackages-StateMachine.git",
