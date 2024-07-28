@@ -1,0 +1,1472 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7555276370535722342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Jump->To->Idle
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 3754024159487478750}
+  m_TargetState: {fileID: 9143926703478560136}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &-6154612684288521615
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Descending->To->Move
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1353572040306760284}
+  m_TargetState: {fileID: 1081710066158928}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: Speed
+    m_Mode: 3
+    m_Type: 1
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &-5976464489721335531
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Hand->To->Climb
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -5334988126469637973}
+  m_TargetState: {fileID: -1492813095643323184}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Speed
+    m_Mode: 3
+    m_Type: 1
+    m_FloatValue: 0
+    m_CustomCondition: IsFacingInInputDirection, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: IsFacingInInputDirection, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &-5334988126469637973
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Hang
+  m_EditorClassIdentifier: 
+  m_Position: {x: 629, y: 265, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions:
+  - {fileID: -5976464489721335531}
+--- !u!114 &-5318338218677427996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Move->To->Idle
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 1081710066158928}
+  m_TargetState: {fileID: 9143926703478560136}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Speed
+    m_Mode: 4
+    m_Type: 1
+    m_FloatValue: 0.1
+    m_CustomCondition: 
+--- !u!114 &-5113402908513316108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Idle->To->Move
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 9143926703478560136}
+  m_TargetState: {fileID: 1081710066158928}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Speed
+    m_Mode: 3
+    m_Type: 1
+    m_FloatValue: 0.1
+    m_CustomCondition: 
+--- !u!114 &-4984492970750771759
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Descending->To->Wall Grab
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1353572040306760284}
+  m_TargetState: {fileID: -969942873658915362}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 1
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingWallFront,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingLedge, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &-4959592012246152689
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Ascending->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 3482751738790226323}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 1
+  m_ExitTime: 0.3
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions: []
+--- !u!114 &-3596157885785182268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Climbing->To->New State
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1492813095643323184}
+  m_TargetState: {fileID: 8257151699412583876}
+  m_HasExitTime: 1
+  m_ExitTime: 1
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions: []
+--- !u!114 &-3228378537860898842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Descending->To->Wall Slide
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1353572040306760284}
+  m_TargetState: {fileID: 7777450452417256575}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: CanWallSlide, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &-3016158193804261422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Climb->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 4786336608362675093}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingWallFront,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &-3000015945383696649
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Bounce->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 106259445212553532}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 1
+  m_ExitTime: 0.03
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions: []
+--- !u!114 &-2646361294801742323
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Slide->To->Wall Grab
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 7777450452417256575}
+  m_TargetState: {fileID: -969942873658915362}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 1
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: VerticalInput
+    m_Mode: 3
+    m_Type: 1
+    m_FloatValue: -0.01
+    m_CustomCondition: 
+  - m_Name: VerticalInput
+    m_Mode: 4
+    m_Type: 1
+    m_FloatValue: 0.01
+    m_CustomCondition: 
+--- !u!114 &-2403720859055265256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Grab->To->Idle
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -969942873658915362}
+  m_TargetState: {fileID: 9143926703478560136}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &-2060989079327559714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Move->To->Wall Grab
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 1081710066158928}
+  m_TargetState: {fileID: -969942873658915362}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 1
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingWallFront,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingLedge, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &-1936579709832478262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Climb->To->Wall Jump
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 4786336608362675093}
+  m_TargetState: {fileID: 3754024159487478750}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 3
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &-1492813095643323184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Climbing
+  m_EditorClassIdentifier: 
+  m_Position: {x: 631, y: 370, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions:
+  - {fileID: -3596157885785182268}
+--- !u!114 &-1353572040306760284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Jump Descending
+  m_EditorClassIdentifier: 
+  m_Position: {x: 774, y: 471, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineGraph.Utilities.ApplyActorParameter, AssemblyStateMachine,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: Descending
+    whenToExecute: 17
+  - fullName: SAS.StateMachineCharacterController2D.ApplyCoyote, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 5
+  - fullName: SAS.StateMachineCharacterController2D.AerialMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 4
+  - fullName: SAS.StateMachineCharacterController2D.DownwardMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 5
+  - fullName: SAS.StateMachineCharacterController2D.FlipCharacter, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 4
+  m_Transitions:
+  - {fileID: 5781785896820217124}
+  - {fileID: 1400924364365326852}
+  - {fileID: -6154612684288521615}
+  - {fileID: 1059470944654468354}
+  - {fileID: -4984492970750771759}
+  - {fileID: -3228378537860898842}
+--- !u!114 &-997022383562894913
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Climb->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 4786336608362675093}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: IsFacingInInputDirection, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &-969942873658915362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Wall Grab
+  m_EditorClassIdentifier: 
+  m_Position: {x: 1472, y: 247, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.SetKinematic, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.SetVelocityZero, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.UnsetKinematic, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 16
+  m_Transitions:
+  - {fileID: -2403720859055265256}
+  - {fileID: 4034465848002568072}
+  - {fileID: 6741742032477284533}
+  - {fileID: 785516004785677533}
+  - {fileID: 2771098077639895663}
+  - {fileID: 7818596299628908645}
+--- !u!114 &-594211418327181948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Slide->To->Idle
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 7777450452417256575}
+  m_TargetState: {fileID: 9143926703478560136}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: Grab
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: IsGrounded, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &-419125803380740984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Slide->To->Wall Jump
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 7777450452417256575}
+  m_TargetState: {fileID: 3754024159487478750}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 3
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &-168076814895270076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed43b1bea1e69d49a73ea66f6732994, type: 3}
+  m_Name: Base StateMachine
+  m_EditorClassIdentifier: 
+  m_Position: {x: 300, y: 50, z: 0}
+  m_PositionAsUpNode: {x: 770, y: 248, z: 0}
+  m_AnyStatePosition: {x: 1172, y: 475, z: 0}
+  m_ParentStateMachine: {fileID: 0}
+  m_ChildStateMachines:
+  - {fileID: 4358463568553632451}
+  - {fileID: 8439022709347911730}
+  m_StateModels:
+  - {fileID: 9143926703478560136}
+  - {fileID: 1081710066158928}
+  - {fileID: 4843062537905591763}
+  - {fileID: 1585337161193618683}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1523b8ee4bacc64cb19ba28d47e9317, type: 3}
+  m_Name: State Machine Controller
+  m_EditorClassIdentifier: 
+  m_BaseStateMachineModel: {fileID: -168076814895270076}
+  _parameters:
+  - m_Name: Speed
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: HorizontalInput
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: VerticalInput
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: Jump
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: JumpHold
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: Grab
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: Dash
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: Test
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  - m_Name: Bounce
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+  m_DefaultStateModel: {fileID: 9143926703478560136}
+  m_AnyStateModel: {fileID: 9174473400879436636}
+--- !u!114 &1081710066158928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Move
+  m_EditorClassIdentifier: 
+  m_Position: {x: 941, y: 166, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.FlipCharacter, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 4
+  - fullName: SAS.StateMachineCharacterController2D.ApplyHorizontalMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: Move
+    whenToExecute: 4
+  - fullName: SAS.StateMachineCharacterController2D.HandleStepClimb, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 2
+  - fullName: SAS.StateMachineCharacterController2D.ResetJumpConsumed, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.TriggerCoyoteTimer, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 16
+  m_Transitions:
+  - {fileID: -5318338218677427996}
+  - {fileID: 578392699360722883}
+  - {fileID: 218454308561993487}
+  - {fileID: -2060989079327559714}
+--- !u!114 &106259445212553532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Bounce
+  m_EditorClassIdentifier: 
+  m_Position: {x: 538, y: 643, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions:
+  - {fileID: -3000015945383696649}
+--- !u!114 &218454308561993487
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Move->To->Jump Ascending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 1081710066158928}
+  m_TargetState: {fileID: 3482751738790226323}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 3
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &578392699360722883
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Move->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 1081710066158928}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &785516004785677533
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Grab->To->Wall Slide
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -969942873658915362}
+  m_TargetState: {fileID: 7777450452417256575}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: VerticalInput
+    m_Mode: 4
+    m_Type: 1
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &1059470944654468354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Descending->To->Idle
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1353572040306760284}
+  m_TargetState: {fileID: 9143926703478560136}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1400924364365326852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Descending->To->Jump Ascending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1353572040306760284}
+  m_TargetState: {fileID: 3482751738790226323}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 1
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.CanAirJump, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1485971632513723885
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: In Air->To->Land
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 0}
+  m_TargetState: {fileID: 0}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions: []
+--- !u!114 &1585337161193618683
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Dash
+  m_EditorClassIdentifier: 
+  m_Position: {x: 934, y: 320, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions: []
+--- !u!114 &1599103926693927471
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Ascending->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 3482751738790226323}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: JumpHold
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &2315411492755466616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Climb->To->Wall Grab
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 4786336608362675093}
+  m_TargetState: {fileID: -969942873658915362}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: VerticalInput
+    m_Mode: 4
+    m_Type: 1
+    m_FloatValue: 0.01
+    m_CustomCondition: 
+--- !u!114 &2771098077639895663
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Grab->To->Wall Jump
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -969942873658915362}
+  m_TargetState: {fileID: 3754024159487478750}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 3
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &3482751738790226323
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Jump Ascending
+  m_EditorClassIdentifier: 
+  m_Position: {x: 486, y: 471, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.AerialMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 4
+  - fullName: SAS.StateMachineCharacterController2D.UpwardMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 5
+  - fullName: SAS.StateMachineCharacterController2D.FlipCharacter, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 4
+  - fullName: SAS.StateMachineCharacterController2D.ConsumeJump, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  m_Transitions:
+  - {fileID: 1599103926693927471}
+  - {fileID: -4959592012246152689}
+--- !u!114 &3576569288280128813
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Idle->To->Wall Grab
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 9143926703478560136}
+  m_TargetState: {fileID: -969942873658915362}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 1
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingWallFront,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingLedge, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &3616687967571763428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Slide->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 7777450452417256575}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: CanWallSlide, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: IsFacingInInputDirection, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &3754024159487478750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Wall Jump
+  m_EditorClassIdentifier: 
+  m_Position: {x: 775, y: 679, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.ResetJumpConsumed, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.ApplyWallJumpVelocity, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.ConsumeJump, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  m_Transitions:
+  - {fileID: 4431046287795314370}
+  - {fileID: -7555276370535722342}
+--- !u!114 &3769916264646906853
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Slide->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 7777450452417256575}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingWallFront,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &3770949583885368779
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Idle->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 9143926703478560136}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &3895473363948700450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Idle->To->Jump Ascending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 9143926703478560136}
+  m_TargetState: {fileID: 3482751738790226323}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 1
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &4034465848002568072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Grab->To->Wall Climb
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -969942873658915362}
+  m_TargetState: {fileID: 4786336608362675093}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: VerticalInput
+    m_Mode: 3
+    m_Type: 1
+    m_FloatValue: 0.01
+    m_CustomCondition: 
+--- !u!114 &4358463568553632451
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed43b1bea1e69d49a73ea66f6732994, type: 3}
+  m_Name: Ledge
+  m_EditorClassIdentifier: 
+  m_Position: {x: 1563, y: 276, z: 0}
+  m_PositionAsUpNode: {x: 700, y: 100, z: 0}
+  m_AnyStatePosition: {x: 300, y: 50, z: 0}
+  m_ParentStateMachine: {fileID: -168076814895270076}
+  m_ChildStateMachines: []
+  m_StateModels:
+  - {fileID: -5334988126469637973}
+  - {fileID: -1492813095643323184}
+  - {fileID: 8257151699412583876}
+--- !u!114 &4431046287795314370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Jump->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: 3754024159487478750}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 1
+  m_ExitTime: 0.4
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions: []
+--- !u!114 &4786336608362675093
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Wall Climb
+  m_EditorClassIdentifier: 
+  m_Position: {x: 1468, y: 674, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.ApplyWallClimbVelocity, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: WallClimbSpeed
+    whenToExecute: 4
+  m_Transitions:
+  - {fileID: 2315411492755466616}
+  - {fileID: -3016158193804261422}
+  - {fileID: -997022383562894913}
+  - {fileID: -1936579709832478262}
+--- !u!114 &4843062537905591763
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Land
+  m_EditorClassIdentifier: 
+  m_Position: {x: 939, y: 398, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions: []
+--- !u!114 &5781785896820217124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Jump Descending->To->Wall Jump
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -1353572040306760284}
+  m_TargetState: {fileID: 3754024159487478750}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Jump
+    m_Mode: 3
+    m_Type: 9
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsGrounded, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - m_Name: Custom
+    m_Mode: 1
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: SAS.StateMachineCharacterController2D.IsTouchingWall, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &6741742032477284533
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Grab->To->Wall Slide
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -969942873658915362}
+  m_TargetState: {fileID: 7777450452417256575}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+--- !u!114 &7777450452417256575
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Wall Slide
+  m_EditorClassIdentifier: 
+  m_Position: {x: 1471, y: 467, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.ApplySlideVelocity, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: WallSlidSpeed
+    whenToExecute: 4
+  m_Transitions:
+  - {fileID: -419125803380740984}
+  - {fileID: -594211418327181948}
+  - {fileID: -2646361294801742323}
+  - {fileID: 3769916264646906853}
+  - {fileID: 3616687967571763428}
+--- !u!114 &7818596299628908645
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f0dc7669bda5a4eb7472cb2dc10cb7, type: 3}
+  m_Name: Wall Grab->To->Jump Descending
+  m_EditorClassIdentifier: 
+  m_SourceState: {fileID: -969942873658915362}
+  m_TargetState: {fileID: -1353572040306760284}
+  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_WaitForAwaitableActionsToComplete: 1
+  m_Conditions:
+  - m_Name: Grab
+    m_Mode: 2
+    m_Type: 4
+    m_FloatValue: 0
+    m_CustomCondition: 
+  - m_Name: Custom
+    m_Mode: 2
+    m_Type: 10
+    m_FloatValue: 0
+    m_CustomCondition: CanWallSlide, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &8257151699412583876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Climbed
+  m_EditorClassIdentifier: 
+  m_Position: {x: 986, y: 259, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions: []
+--- !u!114 &8439022709347911730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed43b1bea1e69d49a73ea66f6732994, type: 3}
+  m_Name: Wall & Air
+  m_EditorClassIdentifier: 
+  m_Position: {x: 1311, y: 278, z: 0}
+  m_PositionAsUpNode: {x: 700, y: 100, z: 0}
+  m_AnyStatePosition: {x: 67, y: 398, z: 0}
+  m_ParentStateMachine: {fileID: -168076814895270076}
+  m_ChildStateMachines: []
+  m_StateModels:
+  - {fileID: 3482751738790226323}
+  - {fileID: -1353572040306760284}
+  - {fileID: 3754024159487478750}
+  - {fileID: -969942873658915362}
+  - {fileID: 4786336608362675093}
+  - {fileID: 7777450452417256575}
+  - {fileID: 106259445212553532}
+--- !u!114 &9143926703478560136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  m_Position: {x: 1316, y: 170, z: 0}
+  m_Tag: 
+  m_StateActions:
+  - fullName: SAS.StateMachineCharacterController2D.ResetJumpConsumed, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.StopHorizontalMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  m_Transitions:
+  - {fileID: -5113402908513316108}
+  - {fileID: 3770949583885368779}
+  - {fileID: 3895473363948700450}
+  - {fileID: 3576569288280128813}
+--- !u!114 &9174473400879436636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
+  m_Name: Any State
+  m_EditorClassIdentifier: 
+  m_Position: {x: 67, y: 398, z: 0}
+  m_Tag: 
+  m_StateActions: []
+  m_Transitions: []
