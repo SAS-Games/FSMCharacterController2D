@@ -14,7 +14,6 @@ namespace SAS.StateMachineCharacterController2D
 
         bool ICustomCondition.Evaluate()
         {
-            Debug.Log($"amountOfJumpsLeft: {_characterController.amountOfJumpsLeft}");
             return _characterController.amountOfJumpsLeft > 0;
         }
 

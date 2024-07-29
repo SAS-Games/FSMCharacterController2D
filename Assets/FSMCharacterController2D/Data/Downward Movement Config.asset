@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d047b02323acdd4684266a2a9f139b5, type: 3}
   m_Name: Downward Movement Config
   m_EditorClassIdentifier: 
-  gravityMultiplier: 15
+  gravityMultiplier: 7.5
   fallSpeedRange:
     min: -50
     max: 100
