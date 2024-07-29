@@ -95,6 +95,8 @@ namespace SAS.Waypoints
             _position = _currentPoint.Current;
         }
 
+#if UNITY_EDITOR
+
         private void OnDrawGizmos()
         {
             if (IsSelected() && editing)
@@ -127,7 +129,6 @@ namespace SAS.Waypoints
             }
         }
 
-#if UNITY_EDITOR
         private bool IsSelected()
         {
             return UnityEditor.Selection.activeGameObject == transform.gameObject;
