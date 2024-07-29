@@ -1,6 +1,5 @@
 using Ink.Runtime;
 using SAS.Utilities.TagSystem;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,7 +12,7 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
     [System.Serializable]
     class SpeakerKeyMap
     {
-        public string key;
+        public string tag;
         public SpeakerView speakerView;
     }
     [Header("Load Globals JSON")]
@@ -41,8 +40,8 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
     private Story _currentStory;
     private bool canContinueToNextLine = false;
 
-    private const string SPEAKER_POS_TAG = "pos";
-    private const string SPEAKER_TAG = "speaker";
+    private const string TAG = "speaker";
+    private const string SPEAKER_TAG = "tag";
     private const string LAYOUT_ANIM_TAG = "layout";
     private const string AUDIO_TAG = "audio";
 
@@ -66,7 +65,7 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
 
         foreach (var speaker in m_Speakers)
         {
-            _speakersUi.Add(speaker.key, speaker.speakerView);
+            _speakersUi.Add(speaker.tag, speaker.speakerView);
         }
 
         _dialogueVariables = new DialogueVariables(m_LoadGlobalsJSON);
@@ -117,6 +116,10 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
     public void EnterDialogueMode(TextAsset inkJSON, Animator emoteAnimator)
     {
         EventBus<DialogueStartEvent>.Raise(new DialogueStartEvent { dialogueHandler = this });
+        foreach(var speakerUI in _speakersUi)
+        {
+            speakerUI.Value.gameObject.SetActive(false);
+        }
         _currentStory = new Story(inkJSON.text);
         DialogueIsPlaying = true;
         m_DialoguePanel.SetActive(true);
@@ -197,11 +200,12 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
             // handle the tag
             switch (tagKey)
             {
-                case SPEAKER_TAG:
+                case TAG:
                     var keyValuePairs = _inkMetaParser.Parse(tagValue);
-                    if (keyValuePairs.TryGetValue(SPEAKER_POS_TAG, out var speakerPos))
+                    if (keyValuePairs.TryGetValue(SPEAKER_TAG, out var speakerPos))
                     {
                         var speakerView = _speakersUi[speakerPos];
+                        speakerView.gameObject.SetActive(true);
                         foreach (var keyValue in keyValuePairs)
                         {
                             switch (keyValue.Key)

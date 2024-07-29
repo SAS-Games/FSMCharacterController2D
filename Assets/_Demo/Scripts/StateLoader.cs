@@ -19,6 +19,7 @@ namespace TarodevController.Demo
 
         private void Awake()
         {
+            return;
             var possiblePlayer = FindObjectOfType<PlayerController>();
             if (!possiblePlayer)
             {
@@ -51,6 +52,7 @@ namespace TarodevController.Demo
 
         private void OnDestroy()
         {
+            return;
             PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(_player.State));
         }
     }

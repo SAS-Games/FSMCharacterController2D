@@ -1,6 +1,5 @@
 using SAS.Utilities.TagSystem;
 using UnityEngine;
-using System.Collections;
 
 
 public class DialogueTrigger : MonoBehaviour
@@ -12,15 +11,11 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Awake()
     {
-         this.Initialize();
+        this.Initialize();
     }
 
     private void ShowDialogue()
     {
-        if (!PlayerPrefs.HasKey(inkJSON.name))
-        {
-            PlayerPrefs.SetInt(inkJSON.name, 1);
-            _dialogueHandler.EnterDialogueMode(inkJSON, null);
-        }
+        _dialogueHandler.EnterDialogueMode(inkJSON, null);
     }
 }

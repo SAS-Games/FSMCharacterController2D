@@ -44,6 +44,7 @@ namespace TarodevController
 
         private void Awake()
         {
+            return;
             _source = GetComponent<AudioSource>();
             _player = GetComponentInParent<IPlayerController>();
             _character = _player.Stats.CharacterSize.GenerateCharacterSize();
@@ -56,6 +57,7 @@ namespace TarodevController
 
         private void OnEnable()
         {
+            return;
             _player.Jumped += OnJumped;
             _player.GroundedChanged += OnGroundedChanged;
             _player.DashChanged += OnDashChanged;
@@ -68,6 +70,7 @@ namespace TarodevController
         
         private void OnDisable()
         {
+            return;
             _player.Jumped -= OnJumped;
             _player.GroundedChanged -= OnGroundedChanged;
             _player.DashChanged -= OnDashChanged;
