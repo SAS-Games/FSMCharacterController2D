@@ -219,7 +219,7 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
                                 case "anim":
                                     speakerView.SetAnimationState(keyValue.Value);
                                     break;
-                                case "pos":
+                                case SPEAKER_TAG:
                                     break;
                                 default:
                                     Debug.LogWarning($" {keyValue.Key}: is not currently being handled for speaker view ");
