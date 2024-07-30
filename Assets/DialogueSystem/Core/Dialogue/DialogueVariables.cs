@@ -4,41 +4,41 @@ using Ink.Runtime;
 
 public class DialogueVariables
 {
-    public Dictionary<string, Ink.Runtime.Object> variables { get; private set; }
+    public Dictionary<string, Ink.Runtime.Object> GlobalVariables { get; private set; }
 
-    private Story globalVariablesStory;
-    private const string saveVariablesKey = "INK_VARIABLES";
+    private Story _globalVariablesStory;
+    private const string SaveVariablesKey = "INK_VARIABLES";
 
     public DialogueVariables(TextAsset loadGlobalsJSON) 
     {
         // create the story
-        globalVariablesStory = new Story(loadGlobalsJSON.text);
+        _globalVariablesStory = new Story(loadGlobalsJSON.text);
         // if we have saved data, load it
-        // if (PlayerPrefs.HasKey(saveVariablesKey))
-        // {
-        //     string jsonState = PlayerPrefs.GetString(saveVariablesKey);
-        //     globalVariablesStory.state.LoadJson(jsonState);
-        // }
+         if (PlayerPrefs.HasKey(SaveVariablesKey))
+         {
+             string jsonState = PlayerPrefs.GetString(SaveVariablesKey);
+            _globalVariablesStory.state.LoadJson(jsonState);
+         }
 
         // initialize the dictionary
-        variables = new Dictionary<string, Ink.Runtime.Object>();
-        foreach (string name in globalVariablesStory.variablesState)
+        GlobalVariables = new Dictionary<string, Ink.Runtime.Object>();
+        foreach (string name in _globalVariablesStory.variablesState)
         {
-            Ink.Runtime.Object value = globalVariablesStory.variablesState.GetVariableWithName(name);
-            variables.Add(name, value);
+            Ink.Runtime.Object value = _globalVariablesStory.variablesState.GetVariableWithName(name);
+            GlobalVariables.Add(name, value);
             Debug.Log("Initialized global dialogue variable: " + name + " = " + value);
         }
     }
 
     public void SaveVariables() 
     {
-        if (globalVariablesStory != null) 
+        if (_globalVariablesStory != null) 
         {
             // Load the current state of all of our variables to the globals story
-            VariablesToStory(globalVariablesStory);
+            VariablesToStory(_globalVariablesStory);
             // NOTE: eventually, you'd want to replace this with an actual save/load method
             // rather than using PlayerPrefs.
-            PlayerPrefs.SetString(saveVariablesKey, globalVariablesStory.state.ToJson());
+            PlayerPrefs.SetString(SaveVariablesKey, _globalVariablesStory.state.ToJson());
         }
     }
 
@@ -57,16 +57,16 @@ public class DialogueVariables
     private void VariableChanged(string name, Ink.Runtime.Object value) 
     {
         // only maintain variables that were initialized from the globals ink file
-        if (variables.ContainsKey(name)) 
+        if (GlobalVariables.ContainsKey(name)) 
         {
-            variables.Remove(name);
-            variables.Add(name, value);
+            GlobalVariables.Remove(name);
+            GlobalVariables.Add(name, value);
         }
     }
 
     private void VariablesToStory(Story story) 
     {
-        foreach(KeyValuePair<string, Ink.Runtime.Object> variable in variables) 
+        foreach(KeyValuePair<string, Ink.Runtime.Object> variable in GlobalVariables) 
         {
             story.variablesState.SetGlobal(variable.Key, variable.Value);
         }

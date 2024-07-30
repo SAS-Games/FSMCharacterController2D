@@ -1,3 +1,5 @@
+INCLUDE  globals.ink
+I am your Instructor {instructor_name}
 -> knot_example
 
 == knot_example ==
@@ -8,6 +10,7 @@ To define a knot, you use the `==` symbols followed by the knot's name, like thi
 == divert_example ==
 [\->] This is a divert. It allows us to jump to other parts of the story. Diverts are used to direct the flow of the narrative, guiding the reader to different sections based on choices or events.
 To use a divert, you write the `\->` symbol followed by the name of the knot or stitch you want to jump to, like this:
+
 Now we will demonstrate choices.
 -> choice_example
 
@@ -45,7 +48,7 @@ To define a sticky choice, you use the `+` symbol followed by the choice text, l
 
 == sticky_choice_2 ==
 This is another sticky choice. Like the first, sticky choices persist, allowing you to revisit them.
-To define a sticky choice, you use the `+` symbol followed by the choice text, like this: <b><color=red><size=30>Choice_Text</size></color></b>
--> choice_example
+To define a sticky choice, you use the `+` symbol followed by the choice text, like this: <b><color=red><size=30>+Choice_Text</size></color></b>
+-> END
 
 

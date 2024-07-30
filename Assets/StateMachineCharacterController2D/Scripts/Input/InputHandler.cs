@@ -83,21 +83,28 @@ namespace SAS.StateMachineCharacterController2D
         private void OnDisable()
         {
             var moveInputAction = m_InputConfig.GetInputAction("Move");
+            moveInputAction.Reset();
             moveInputAction.started -= ParseMovementInput;
             moveInputAction.performed -= ParseMovementInput;
             moveInputAction.canceled -= ParseMovementInput;
 
             var jumpInputAction = m_InputConfig.GetInputAction("Jump");
+            jumpInputAction.Reset();
             jumpInputAction.performed -= _jumpPerformed;
             jumpInputAction.canceled -= _jumpCanceled;
 
             var grabInputAction = m_InputConfig.GetInputAction("Grab");
+            grabInputAction.Reset();
             grabInputAction.performed -= _grabPerformed;
             grabInputAction.canceled -= _grabCanceled;
 
             var runInputAction = m_InputConfig.GetInputAction("Run");
+            runInputAction.Reset();
             runInputAction.started -= _runStarted;
             runInputAction.canceled -= _runCanceled;
+
+            _characterController.OnMove(0);
+            _characterController.UserInput(Vector2.zero);
         }
 
         private void Update() => ProcessMovementInput();

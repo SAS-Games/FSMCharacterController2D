@@ -190,22 +190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueHandlerCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2995104060214822055, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995104060214822055, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995104060214822055, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2995104060214822055, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7016907492029386284, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -285,14 +269,6 @@ PrefabInstance:
     - target: {fileID: 7016907492029386284, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529916272873781350, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 8529916272873781350, guid: 2377593ced00fd148b2dd057ffc62a8a, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
