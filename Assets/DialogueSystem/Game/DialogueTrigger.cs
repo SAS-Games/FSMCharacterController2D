@@ -8,6 +8,9 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
+    private bool _triggerOncePerSession = true;
+
+    private bool _triggered = false;
 
     private void Awake()
     {
@@ -16,6 +19,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void ShowDialogue()
     {
-        _dialogueHandler.EnterDialogueMode(inkJSON, null);
+        if (_triggerOncePerSession && !_triggered)
+        {
+            _triggered = true;
+            _dialogueHandler.EnterDialogueMode(inkJSON, null);
+        }
     }
 }

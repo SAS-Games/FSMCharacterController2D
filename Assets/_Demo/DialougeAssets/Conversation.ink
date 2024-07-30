@@ -7,10 +7,10 @@
     Yeah, I've used Inklet before. It's a great extension for Ink in Unity. It makes writing and managing dialogues much easier. Want me to walk you through how to set it up and use it? #speaker: tag::Alex, anim::Passive #speaker: tag::Jamie, anim::Active
     *[Sure, that would be awesome!] -> sure
     *[No, I want to try figuring it out myself.] -> no_help
-    
     == sure ==
     Sure, that would be awesome! I know how to use Ink for writing dialogues, but I'm not sure how to integrate it with Unity.#speaker: tag::Alex, anim::Active #speaker: tag::Jamie, anim::Passive
     No problem. First things first, have you installed the Ink Unity Integration package?#speaker: tag::Alex, anim::Active #speaker: tag::Jamie, anim::Passive
+    
     * [Yes, I have that set up already.] -> yes_integration
     * [No, I haven't.] -> no_integration
 
