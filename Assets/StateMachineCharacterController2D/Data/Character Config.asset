@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionLayers:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 321
   SlopeLimit: 50
   Height: 1.35
   Width: 0.9
