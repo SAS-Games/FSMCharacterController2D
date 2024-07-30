@@ -15,9 +15,9 @@ MonoBehaviour:
   CollisionLayers:
     serializedVersion: 2
     m_Bits: 321
-  SlopeLimit: 50
+  SlopeLimit: 60
   Height: 1.35
   Width: 0.9
   StepHeight: 0.3
   CrouchHeight: 1.8
-  RayInset: 0.1
+  RayInset: 0.05

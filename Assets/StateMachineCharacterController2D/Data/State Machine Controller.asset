@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Position: {x: 300, y: 50, z: 0}
   m_PositionAsUpNode: {x: 770, y: 248, z: 0}
-  m_AnyStatePosition: {x: 1172, y: 475, z: 0}
+  m_AnyStatePosition: {x: 1172, y: 715, z: 0}
   m_ParentStateMachine: {fileID: 0}
   m_ChildStateMachines:
   - {fileID: 4358463568553632451}
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
   m_Name: Move
   m_EditorClassIdentifier: 
-  m_Position: {x: 941, y: 166, z: 0}
+  m_Position: {x: 941, y: 406, z: 0}
   m_Tag: 
   m_StateActions:
   - fullName: SAS.StateMachineCharacterController2D.FlipCharacter, Assembly-CSharp,
@@ -712,6 +712,11 @@ MonoBehaviour:
     tag: 0
     key: 
     whenToExecute: 16
+  - fullName: SAS.StateMachineCharacterController2D.SetStepDownRayLength, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
   m_Transitions:
   - {fileID: -5318338218677427996}
   - {fileID: 578392699360722883}
@@ -887,7 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
-  m_Position: {x: 934, y: 320, z: 0}
+  m_Position: {x: 934, y: 560, z: 0}
   m_Tag: 
   m_StateActions: []
   m_Transitions: []
@@ -1202,7 +1207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed43b1bea1e69d49a73ea66f6732994, type: 3}
   m_Name: Ledge
   m_EditorClassIdentifier: 
-  m_Position: {x: 1563, y: 276, z: 0}
+  m_Position: {x: 1563, y: 516, z: 0}
   m_PositionAsUpNode: {x: 700, y: 100, z: 0}
   m_AnyStatePosition: {x: 300, y: 50, z: 0}
   m_ParentStateMachine: {fileID: -168076814895270076}
@@ -1266,7 +1271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
   m_Name: Land
   m_EditorClassIdentifier: 
-  m_Position: {x: 939, y: 398, z: 0}
+  m_Position: {x: 939, y: 638, z: 0}
   m_Tag: 
   m_StateActions: []
   m_Transitions: []
@@ -1411,7 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed43b1bea1e69d49a73ea66f6732994, type: 3}
   m_Name: Wall & Air
   m_EditorClassIdentifier: 
-  m_Position: {x: 1311, y: 278, z: 0}
+  m_Position: {x: 1311, y: 518, z: 0}
   m_PositionAsUpNode: {x: 700, y: 100, z: 0}
   m_AnyStatePosition: {x: 67, y: 398, z: 0}
   m_ParentStateMachine: {fileID: -168076814895270076}
@@ -1436,7 +1441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
   m_Name: Idle
   m_EditorClassIdentifier: 
-  m_Position: {x: 1316, y: 170, z: 0}
+  m_Position: {x: 1316, y: 410, z: 0}
   m_Tag: 
   m_StateActions:
   - fullName: SAS.StateMachineCharacterController2D.ResetJumpConsumed, Assembly-CSharp,
@@ -1445,6 +1450,11 @@ MonoBehaviour:
     key: 
     whenToExecute: 1
   - fullName: SAS.StateMachineCharacterController2D.StopHorizontalMovement, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    tag: 0
+    key: 
+    whenToExecute: 1
+  - fullName: SAS.StateMachineCharacterController2D.SetStepDownRayLength, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     tag: 0
     key: 
@@ -1466,7 +1476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557f759ffd418e4bab479f7b35953ed, type: 3}
   m_Name: Any State
   m_EditorClassIdentifier: 
-  m_Position: {x: 1172, y: 475, z: 0}
+  m_Position: {x: 67, y: 398, z: 0}
   m_Tag: 
   m_StateActions: []
   m_Transitions: []

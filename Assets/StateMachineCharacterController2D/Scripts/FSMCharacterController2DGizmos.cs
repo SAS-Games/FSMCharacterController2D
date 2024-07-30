@@ -14,7 +14,7 @@ namespace SAS.StateMachineCharacterController2D
             Gizmos.color = Color.magenta;
 
             var rayStart = pos + Vector2.up * SKIN_WIDTH;
-            var rayDir = Vector3.down * (SKIN_WIDTH);
+            var rayDir = Vector3.down * (currentStepDownLength + SKIN_WIDTH);
             Gizmos.DrawRay(rayStart, rayDir);
             foreach (var offset in GenerateRayOffsets())
             {

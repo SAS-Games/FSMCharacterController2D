@@ -53516,6 +53516,7 @@ MonoBehaviour:
   m_LedgeCheckVertical: {fileID: 1544183673}
   canSetVelocity: 0
   _immediateMove: {x: 0, y: 0}
+  currentStepDownLength: 0
 --- !u!114 &3054942120982072960
 MonoBehaviour:
   m_ObjectHideFlags: 0

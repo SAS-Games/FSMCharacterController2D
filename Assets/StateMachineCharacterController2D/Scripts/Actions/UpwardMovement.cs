@@ -24,6 +24,7 @@ namespace SAS.StateMachineCharacterController2D
             {
                 _gravityContributionMultiplier = 0;
                 _verticalMovement = _upwardMovementConfig.jumpForce;
+                _characterController.currentStepDownLength = 0; //todo: note sure it should be here or it should be an action
                 return;
             }
             _gravityContributionMultiplier += _upwardMovementConfig.gravityComebackMultiplier;

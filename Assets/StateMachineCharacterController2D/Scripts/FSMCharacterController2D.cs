@@ -194,6 +194,8 @@ namespace SAS.StateMachineCharacterController2D
             GetComponent<BoxCollider2D>().hideFlags = HideFlags.None;
         }
         public Vector2 position { get; private set; }
+        public float currentStepDownLength;
+
         public bool HasGroundDetected()
         {
             // Is the middle ray good?
@@ -213,7 +215,7 @@ namespace SAS.StateMachineCharacterController2D
 
             bool PerformRay(Vector2 point)
             {
-                var groundHit = Physics2D.Raycast(point, -Up, SKIN_WIDTH, m_CharacterConfig.CollisionLayers);
+                var groundHit = Physics2D.Raycast(point, -Up, currentStepDownLength + SKIN_WIDTH, m_CharacterConfig.CollisionLayers);
                 if (!groundHit)
                     return false;
 
@@ -225,7 +227,7 @@ namespace SAS.StateMachineCharacterController2D
         }
         private IEnumerable<float> GenerateRayOffsets()
         {
-            int RAY_SIDE_COUNT = 1;
+            int RAY_SIDE_COUNT = 2;
             var extent = characterSize.StandingColliderSize.x / 2 - characterSize.RayInset;
             var offsetAmount = extent / RAY_SIDE_COUNT;
             for (var i = 1; i < RAY_SIDE_COUNT + 1; i++)
