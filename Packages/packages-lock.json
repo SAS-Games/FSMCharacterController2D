@@ -18,39 +18,35 @@
       "hash": "85321270258f93feb30b39a3fc54088c536092b9"
     },
     "com.sas.dev-utilities": {
-      "version": "https://github.com/SAS-Games/SASPackage-DevUtilities.git#v1.0.4",
+      "version": "file:SASPackage-DevUtilities",
       "depth": 0,
-      "source": "git",
+      "source": "embedded",
       "dependencies": {
         "com.unity.textmeshpro": "3.0.6",
         "com.unity.inputsystem": "1.6.3"
-      },
-      "hash": "1ac09ed61f55c1cf674e3da2e4967a9766d103f3"
+      }
     },
     "com.sas.scriptabletypes": {
-      "version": "https://github.com/SAS-Games/SAS-ScriptableTypes.git#v1.0.0",
+      "version": "file:SAS-ScriptableTypes",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "09a76844aaa8d52fb7628007fa742b35b480f893"
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.sas.statemachine": {
-      "version": "https://github.com/SAS-Games/SASPackages-StateMachine.git",
+      "version": "file:SASPackages-StateMachine",
       "depth": 0,
-      "source": "git",
+      "source": "embedded",
       "dependencies": {
         "com.sas.utilities": "1.0.0"
-      },
-      "hash": "544f708a150bd024682bc1bc81858e81206732a6"
+      }
     },
     "com.sas.utilities": {
-      "version": "https://github.com/SAS-Games/SASPackages-Utilities.git",
+      "version": "file:SASPackages-Utilities",
       "depth": 0,
-      "source": "git",
+      "source": "embedded",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.1.0"
-      },
-      "hash": "f949364220384ba6ad86fb127738d65622fd2807"
+      }
     },
     "com.unity.2d.animation": {
       "version": "9.1.1",
@@ -78,7 +74,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.common": {
-      "version": "8.0.2",
+      "version": "8.0.3",
       "depth": 2,
       "source": "registry",
       "dependencies": {
@@ -115,12 +111,12 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
-      "version": "9.0.3",
+      "version": "9.0.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.1.0",
-        "com.unity.2d.common": "8.0.2",
+        "com.unity.2d.common": "8.0.3",
         "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -147,11 +143,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.addressables": {
-      "version": "1.21.21",
+      "version": "1.22.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.21.23",
+        "com.unity.scriptablebuildpipeline": "1.21.24",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
@@ -170,7 +166,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.16",
+      "version": "1.8.17",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -180,7 +176,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.4.3",
+      "version": "2.4.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -212,14 +208,14 @@
         "com.unity.2d.pixel-perfect": "5.0.3",
         "com.unity.2d.psdimporter": "8.0.5",
         "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.spriteshape": "9.0.3",
+        "com.unity.2d.spriteshape": "9.0.4",
         "com.unity.2d.tilemap": "1.0.0",
         "com.unity.2d.tilemap.extras": "3.1.2",
         "com.unity.2d.aseprite": "1.1.4"
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.28",
+      "version": "3.0.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -307,7 +303,7 @@
       }
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.21.23",
+      "version": "1.21.24",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
