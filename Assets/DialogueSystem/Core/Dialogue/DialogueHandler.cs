@@ -294,7 +294,7 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
     public Ink.Runtime.Object GetVariableState(string variableName)
     {
         Ink.Runtime.Object variableValue = null;
-        _dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        _dialogueVariables.GlobalVariables.TryGetValue(variableName, out variableValue);
         if (variableValue == null)
         {
             Debug.LogWarning("Ink Variable was found to be null: " + variableName);
@@ -304,7 +304,7 @@ public class DialogueHandler : MonoBehaviour, IDialogueHandler
 
     public void OnApplicationQuit()
     {
-        _dialogueVariables.SaveVariables();
+        _dialogueVariables?.SaveVariables();
     }
 
     void IBindable.OnInstanceCreated()
